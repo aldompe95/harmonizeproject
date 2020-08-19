@@ -30,7 +30,7 @@ Hardware Setup:
 ![Connection Diagram](http://harmonizeproject.matthewpilsbury.com/diagram.png)
 
 Download the latest scripts via:
-`git clone https://github.com/MCPCapital/harmonizeproject`
+`git clone https://github.com/MCPCapital/harmonizeproject` and then 
 `cd harmonizeproject`
 
 **NEW!** To install all relevant dependencies, run ./setup.sh as root or by using sudo. **Be sure to watch for errors!** Expect this to take up about 500MB, and up to an hour. If this does not work for you or your encounter errors, (it is a work in progress at the moment) please follow the instructions below.
@@ -40,17 +40,8 @@ Installing APT Dependencies: (Use sudo or run as root.)
 apt update --yes
 apt dist-upgrade --yes
 apt upgrade --yes
-apt install --yes git python3 python3-pip python3-requests python3-dev python-http-parser libpython-dev libqtgui4 libqt4-test libgstreamer1.0-0 libjpeg62-turbo-dev libmbedtls12 libmbedtls-dev screen
+apt install --yes git python3 python3-pip python3-requests python3-dev python-http-parser libpython-dev libqtgui4 libqt4-test libgstreamer1.0-0 libjpeg62-turbo-dev python3-http-parser screen
 apt install --yes python3-opencv
-```
-If python3-opencv installation fails, you may have to compile from source. [Follow this guide.](https://pimylifeup.com/raspberry-pi-opencv/)
-
-Installing python-mbedtls: (Use sudo or run as root.) (If this does not work, you may have to compile from source. Follow-up on this pending.)
-```
-git clone https://github.com/Synss/python-mbedtls
-cd python-mbedtls
-pip3 install -r requirements.txt
-python3 ./setup.py install
 ```
 
 Set up your entertainment area:
@@ -83,6 +74,7 @@ Configurable values within the script:
 
 * "Import Error" - Ensure you have all the dependencies installed. Run through the manual dependency install instructions above.
 * No video input // lights are all dim gray - Run 'python3 ./videotest.py' to see if your device (via OpenCV) can properly read the video input.
+* python3-opencv installation fails - Compile from source - [Follow this guide.](https://pimylifeup.com/raspberry-pi-opencv/)
 
 # Contributions & License
 
